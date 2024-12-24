@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+.card {
+    background: linear-gradient(145deg, #ff0000, #ff8c00);
+    color: white;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 5s linear infinite;
+}
+@keyframes fall {
+    to {
+        transform: translateY(700px);
+    }
+}
+.tree {
+    font-size: 100px;
+    margin: 50px 0 20px;
+}
+h1 {
+    font-size: 40px;
+    margin: 0;
+}
+.message {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    font-size: 18px;
+}
+
+.text-mensagem {
+    margin-top: 100px;
+}
+
+/* estilo mensagem */
+.text-mensagem {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black; /* Efeito de cursor */
+    width: fit-content;
+    margin: 20px auto;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* 2 tela - aparecendo mensagem de natal */
+.container {
+    text-align: center;
+    margin-top: 20%;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff2d1a;
+    border-radius: 20px;
+}
+
+.mensagem {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: #D63447;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0;
+    transition: all 1s ease;
+}

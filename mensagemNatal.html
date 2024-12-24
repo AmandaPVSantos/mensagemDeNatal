@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem de Natal</title>
+    <link rel="stylesheet" href="mensagemNatal.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="tree">&#x1F384;</div>
+        <h1>Feliz Natal!</h1>
+
+        <div class="text-mensagem">
+            <h2 id="linha1"></h2>
+        </div>
+
+        <div class="text-mensagem">
+            <p id="linha2"></p>
+        </div>
+
+        <div class="text-mensagem">
+            <h3 id="linha3"></h3>
+        </div>
+
+        <div class="text-mensagem">
+            <p id="linha4"></p>
+        </div>
+
+        <div class="text-mensagem">
+            <h4 id="linha5"></h4>
+        </div>
+
+        <div class="footer">🎅 Boas Festas! 🎁</div>
+    </div>
+
+    <script>
+        const texto = [
+            "🎄✨ Que neste Natal o brilho das luzes ilumine não apenas os lares, mas também os corações.",
+            "Que a alegria seja intensa, o amor seja abundante e a esperança renasça em cada sorriso compartilhado.",
+            "Desejo a você e sua família um Natal cheio de paz, união e momentos inesquecíveis.",
+            "Que cada abraço seja sincero, cada palavra traga conforto e cada lembrança aqueça o coração.",
+            "🌟 Feliz Natal e um Ano Novo repleto de realizações e felicidade! 🎅"
+        ];
+
+        const ids = ['linha1', 'linha2', 'linha3', 'linha4', 'linha5'];
+        let index = 0;
+        let i = 0;
+
+        function escreverTexto() {
+            if (i < texto[index].length) {
+                document.getElementById(ids[index]).innerHTML += texto[index].charAt(i);
+                i++;
+                setTimeout(escreverTexto, 40);  // Velocidade de digitação
+            } else {
+                i = 0;
+                index++;
+                if (index < texto.length) {
+                    setTimeout(escreverTexto, 500);  // Pausa entre as frases
+                }
+            }
+        }
+
+        window.onload = escreverTexto;
+    </script>
+
+</body>
+</html>
